@@ -1,0 +1,21 @@
+<body>
+<div>
+	<form (ngSubmit)="onSubmit()">
+    <h3>Name</h3>
+		<input class="input-box" type="text" name="username" [(ngModel)]="anytext" placeholder="Input name" required>
+    <h3>Nickname</h3>
+    <input class="input-box" type="nickname" name="nickname" [(ngModel)]="anytext1" placeholder="Input nickname" required>
+    <h3>Email</h3>
+    <input class="input-box" type="email" name="email" [(ngModel)]="anytext2" placeholder="Input email" required>
+    <h3>Contact</h3>
+    <input class="input-box" type="contact" name="contact" [(ngModel)]="anytext3" placeholder="Input contact number" required>
+    
+    <input class="btn" type="submit" value="Submit" [disabled]="!anytext">
+	</form>
+</div>
+<p *ngIf="submitted">Your name: {{ anytext }} <br/>
+  Your nickanme: {{ anytext1 }} <br/>
+  Your email: {{ anytext2 }} <br/>
+  Your contact number: {{ anytext3 }}</p>
+</body>
+<router-outlet />
